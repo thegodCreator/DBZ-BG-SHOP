@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBZ Battleground</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DBZ Battleground</h1>
+        </header>
+
+        <section id="game-info">
+            <h2>Información del Juego</h2>
+            <p>¡Bienvenido a DBZ Battleground! Un emocionante juego de Roblox ambientado en el universo de Dragon Ball Z. Explora, lucha y descubre poderosos personajes.</p>
+            <p>¡Desafía a otros jugadores y domina el campo de batalla!</p>
+            <a href="https://www.roblox.com/games/TU_ID_DEL_JUEGO/DBZ-Battleground" target="_blank" class="cta-link">¡Juega ahora!</a>
+        </section>
+
+        <section id="shop">
+            <h2>Tienda</h2>
+            
+            <div class="items">
+                <div class="item" id="server-special" data-codigo="dbz!anniversary">
+                    <img src="server_special.png" alt="Servidor Especial">
+                    <h3>Servidor Especial</h3>
+                    <p class="price">$4.99</p>
+                    <p class="info">Un servidor especial para una experiencia única en el juego. ¡Celebremos juntos el aniversario de DBZ!</p>
+                    <button onclick="mostrarInformacion('server-special')">Detalles</button>
+                </div>
+
+                <div class="item" id="transformation" data-codigo="NexusTodoR!ko">
+                    <img src="transformation.png" alt="Transformación Especial">
+                    <h3>Transformación Especial</h3>
+                    <p class="price">$3.99</p>
+                    <p class="info">Desbloquea una transformación única para tu personaje. ¡Sorprende a tus oponentes con nuevos poderes!</p>
+                    <button onclick="mostrarInformacion('transformation')">Detalles</button>
+                </div>
+
+                <div class="item" id="custom-sword" data-codigo="DBZ!UPDATE5">
+                    <img src="custom_sword.png" alt="Espada Personalizada">
+                    <h3>Espada Personalizada</h3>
+                    <p class="price">$5.99</p>
+                    <p class="info">Obtén una espada única con efectos especiales. ¡Actualizada con las últimas mejoras del juego!</p>
+                    <button onclick="mostrarInformacion('custom-sword')">Detalles</button>
+                </div>
+
+                <div class="item" id="special-attack" data-codigo="!anniversaryUPDATE!">
+                    <img src="special_attack.png" alt="Ataque Especial">
+                    <h3>Ataque Especial</h3>
+                    <p class="price">$6.99</p>
+                    <p class="info">Desbloquea un ataque especial devastador. ¡Perfecto para dominar las batallas!</p>
+                    <button onclick="mostrarInformacion('special-attack')">Detalles</button>
+                </div>
+
+                <div class="item" id="energy-booster" data-codigo="x2!ENERGYdbz">
+                    <img src="energy_booster.png" alt="Potenciador de Energía">
+                    <h3>Potenciador de Energía</h3>
+                    <p class="price">$7.80</p>
+                    <p class="info">Duplica tu energía y mejora tu rendimiento en el campo de batalla. ¡No te quedes sin energía!</p>
+                    <button onclick="mostrarInformacion('energy-booster')">Detalles</button>
+                </div>
+            </div>
+
+            <div id="detalle-container" class="hidden">
+                <h3 id="detalle-title"></h3>
+                <img id="detalle-img" alt="Detalle del Objeto">
+                <p id="detalle-price"></p>
+                <p id="detalle-info"></p>
+                <label for="detalle-codigo">Ingresa el código especial:</label>
+                <input type="text" id="detalle-codigo" placeholder="Código especial">
+                <button onclick="obtenerCodigoCompraDetallada()">Obtener Código de Compra</button>
+                <button onclick="ocultarInformacion()">Cerrar</button>
+            </div>
+
+            <div id="payment-form" class="hidden">
+                <!-- Aquí se mostrará el formulario de pago -->
+                <form id="stripe-form">
+                    <label for="card-element">
+                        Ingresa tu información de tarjeta de crédito:
+                    </label>
+                    <div id="card-element"></div>
+
+                    <!-- Usado para mostrar errores de elementos -->
+                    <div id="card-errors" role="alert"></div>
+
+                    <button type="submit">Pagar</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
